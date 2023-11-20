@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500&family=Inter&display=swap" rel="stylesheet">
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <link rel="shortcut icon" href="https://www.analog.com/favicon.ico" type="image/x-icon">
+
+    <title>Mixed-signal and digital signal processing ICs | Analog Devices</title>
+  </head>
+  <body>
+
+    <!-- Navbar -->
+    <nav class="">
+        <div class="nav-adi-bg d-flex align-items-center justify-content between">
+            <div class="container navbar">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <a href="#" type="button" class="btn"><strong>Analog</strong>Dialogue</a>
+                    <a href="#" type="button" class="btn"><strong>Engineer</strong>Zone</a>
+                    <a href="#" type="button" class="btn"><strong>Wiki</strong></a>
+                </div>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <div class="dropdown dropdown-nav">
+                        <a href="#" type="button" class="btn dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa-solid fa-globe fa-xl"></i></a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="dropdown-header">Region</h5>
+                                    <a class="dropdown-item" href="#">India</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Korea</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Singapore</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Taiwan</a>
+                                </div>
+                                <div class="col-6">
+                                    <h5 class="dropdown-header">Languages</h5>
+                                    <a class="dropdown-item" href="#">English</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Chinese</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Japanese</a>
+                                    <div class="dropdown-divider"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" type="button" class="btn nav-shopping"><span><i class="fa-solid fa-cart-shopping fa-xl pr-1"></i><span>Shopping Cart</span></span></a>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar logo and search -->
+        <div class="container py-3">
+            <div class="row d-flex align-items-center justify-content-start">
+                <div class="col-3">
+                    <a href="#"><img src="./img/logo.png" alt="" class="w-50"></a>
+                </div>
+                <div class="col-6">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="border border-right-0 rounded-left pt-2 pb-2 pl-2 input-width" type="search" placeholder="SEARCH" aria-label="Search">
+                        <button class="btn border border-left-0 rounded-0 my-2 my-sm-0 py-2" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar Dropdown Links -->
+        <div class="nav-link-bg">
+            <div class="">
+                <ul class="d-flex align-items-center justify-content-center"> 
+                    <a href="#">
+                        <li>Company <i class="fa-solid fa-angle-down" style="color: #6694b8;"></i></li>
+                    </a>
+                    <a href="#">
+                        <li>myAnalog <i class="fa-solid fa-angle-down" style="color: #6694b8;"></i></li>
+                    </a>
+                    <a href="#">
+                        <li>Products <i class="fa-solid fa-angle-down" style="color: #6694b8;"></i></li>
+                    </a>
+                    <a href="#">
+                        <li>Applications <i class="fa-solid fa-angle-down" style="color: #6694b8;"></i></li>
+                    </a>
+                    <a href="#">
+                        <li>Design Center <i class="fa-solid fa-angle-down" style="color: #6694b8;"></i></li>
+                    </a>
+                    <a href="#">
+                        <li>Education <i class="fa-solid fa-angle-down" style="color: #6694b8;"></i></li>
+                    </a>
+                    <a href="#">
+                        <li>Support <i class="fa-solid fa-angle-down" style="color: #6694b8;"></i></li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carousel -->
+    <section>
+        <div class="carousel-container">
+            <div class="carousel-slide active" data-index="0">
+                <img src="./img/motor-drive-desktop.jpg" alt="Image 1">
+                <div class="container">
+                    <div class="col-7">
+                        <h1 class="text-white pb-5">evolve your motor drive, evolve your factory.</h1>
+                        <p class="pb-5">
+                            An estimated 70% of industrial electricity use is consumed by electric motors. By evolving fixed speed motors with variable drive technology, it’s possible to make significant gains in energy efficiency, save manufacturing time, and extend equipment life.
+                        </p>
+                        <a href="#" class="button btn btn-upgrade">upgrade your motor drive</a>
+                    </div>
+                </div>
+              </div>
+              <div class="carousel-slide" data-index="1">
+                    <img src="./img/signals-motor-desktop.jpg" alt="Image 2">
+                    <div class="container">
+                        <div class="col-8">
+                            <img src="./img/signals-plus-logo-white.svg" alt="" style="width: 30%; height: 10%;">
+                            <h1 class="text-white pb-5 pt-5">REDUCING INDUSTRIAL EMISSIONS<br>THROUGH MOTOR EFFICIENCY</h1>
+                            <p class="pb-5">
+                                The industrial sector—where an estimated 37% of global energy is consumed—represents a unique opportunity to start addressing harmful emissions at scale. Higher motor efficiency can translate to lower emissions in the third installment of our sustainability series.
+                            </p>
+                            <a href="#" class="button btn btn-upgrade">read the article on signals+</a>
+                        </div>
+                    </div>
+              </div>
+              <div class="carousel-slide" data-index="2">
+                    <img src="./img/powertrain-desktop.jpg" alt="Image 3">
+                    <div class="container">
+                        <div class="col-8">
+                            <h1 class="text-white pb-5">LEADING VEHICLE<br>ELECTRIFICATION SOLUTIONS</h1>
+                            <p class="pb-5">
+                                The Intelligent Edge is accelerating innovation and growth in the EV market. From battery management systems to alternative powertrain types, ADI solutions are helping pave the way to longer range, faster charging, improved functional safety, and better total cost of ownership for the EVs of tomorrow.
+                            </p>
+                            <a href="#" class="button btn btn-upgrade">our electric vehicle solutions</a>
+                        </div>
+                    </div>
+              </div>
+              <div class="carousel-slide" data-index="3">
+                    <img src="./img/water-quality-desktop.jpg" alt="Image 4">
+                    <div class="container">
+                        <div class="col-7">
+                            <h1 class="text-white pb-5">ANALYTICAL INSTRUMENTATION:<br>AIR & WATER QUALITY MONITORING</h1>
+                            <p class="pb-5">
+                                Quality of air and water directly impacts quality of life. Air and water quality monitoring provides insights that communities can use to improve human health and reduce pollution through responsible resource management. ADI’s precision and power technologies can help support these goals.
+                            </p>
+                            <a href="#" class="button btn btn-upgrade">air & water testing solutions</a>
+                        </div>
+                    </div>
+              </div>
+              <div class="carousel-slide" data-index="4">
+                    <img src="./img/esg-report-desktop.jpg" alt="Image 5">
+                    <div class="container">
+                        <div class="col-7">
+                            <h1 class="text-white pb-5">ESG 2022 REPORT</h1>
+                            <p class="pb-5">
+                                ADI’s mission is to accelerate human breakthroughs that enrich lives and the world.  We share this mission with our customers and employees to help drive solutions that positively impact humanity and the planet.
+                            </p>
+                            <a href="#" class="button btn btn-upgrade">read our esg report</a>
+                        </div>
+                    </div>
+              </div>
+            </div>
+        </div>
+        <div class="carousel-buttons">
+            <a href="#" class="carousel-btn" data-index="0">
+                <span>Variable Speed Motor Drives</span>
+                <p>Sustainable Industry</p>
+            </a>
+            <a href="#" class="carousel-btn" data-index="1">
+                <span>Industrial Sustainability</span>
+                <p>Motor Efficiency</p>
+            </a>
+            <a href="#" class="carousel-btn" data-index="2">
+                <span>Electrification & Powertrain</span>
+                <p>Electric Vehicles</p>
+            </a>
+            <a href="#" class="carousel-btn" data-index="3">
+                <span>Resource Quality MOnitoring</span>
+                <p>Instrumentation</p>
+            </a>
+            <a href="#" class="carousel-btn" data-index="4">
+                <span>Read the ADI 2022 ESG Report</span>
+                <p>ADI 2022 ESG Report</p>
+            </a>
+        </div>
+    </section> 
+    
+    <!-- Design Tool -->
+    <div class="bg-top-design-tool"></div>
+    <section>
+        <div class="bg-design-tool py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <h1 class="pb-3">Design Tools</h1>
+                        <p>Optimize and simulate your designs using lab-accurate models to simplify your product selection process.</p>
+                        <a href="#" class="button btn">View All Design Tools</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- design-tool-features -->
+        <div class="container">
+            <div class="row design-tool-features">
+                <div class="col-6 py-4">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-design active" data-index="6">
+                            <span>Audio Software</span>
+                            <span>SigmaStudio+</span>
+                        </button>
+                        <button type="button" class="btn btn-design" data-index="7">
+                            <span>Circuit Design</span>
+                            <span>LTSpice</span>
+                        </button>
+                        <button type="button" class="btn btn-design" data-index="8">
+                            <span>Amplifier & Linear</span>
+                            <span>Signal Chain Designer</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="row slide" data-index="6">
+                        <!-- Sigma Studios -->
+                        <div class="col-6"><img src="./img/sigma-studio-slide.jpg" alt=""></div>
+                        <div class="col-6">
+                            <span>SigmaStudio+</span>
+                            <p class="text-white pt-4 pb-2">Some description about SigmaStudio+.</p>
+                            <a href="#" class="button btn">Learn more</a>
+                        </div>
+                    </div>
+                    <div class="row slide" data-index="7">
+                        <!-- LTspice -->
+                        <div class="col-6"><img src="./img/ltspice-slide.jpg" alt=""></div>
+                        <div class="col-6">
+                            <span>LTspice</span>
+                            <p class="text-white pt-4 pb-2">Some description about LTspice.</p>
+                            <a href="#" class="button btn">Learn more</a>
+                        </div>
+                    </div>
+                    <div class="row slide" data-index="8">
+                        <!-- Signal Chain Designer -->
+                        <div class="col-6"><img src="./img/signal-chain-designer.jpg" alt=""></div>
+                        <div class="col-6">
+                            <span>Signal Chain Designer</span>
+                            <p class="text-white pt-4 pb-2">Some description about Signal Chain Designer.</p>
+                            <a href="#" class="button btn">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="design-tool-out-bg"></div>
+    </section>
+    <div class="bg-bottom-design-tool"></div>
+   
+    <!-- New Products & Designs -->
+    <section class="new-products">
+        <div class="container">
+            <!-- New Products Title and Buttons rows -->
+            <div class="row py-5">
+                <h1 class="px-3">New Products and Designs</h1>
+            </div>
+            <div class="row pb-4">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn border-right-0 active">New</button>
+                    <button type="button" class="btn border-left-0">Popular</button>
+                </div>
+            </div>
+            <!-- Product Cards row -->
+            <div class="row row-cols-1 row-cols-md-3">
+                <div class="col mb-4">
+                  <div class="card">
+                    <div class="card-header"><a href="#"><h5>MAX98397</h5></a></div>
+                    <div class="card-body">
+                        <a href="#"><p class="card-text pb-3">28V Digital Input, Class-DG Amplifier with IVSENSE, Ultra-Low IQ, and Brownout Prevention</p></a>
+                        <a href="#"><p class="card-text border-top pt-2">Class DG</p></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col mb-4">
+                  <div class="card">
+                    <div class="card-header"><a href="#"><h5>MAX98397</h5></a></div>
+                    <div class="card-body">
+                        <a href="#"><p class="card-text pb-3">28V Digital Input, Class-DG Amplifier with IVSENSE, Ultra-Low IQ, and Brownout Prevention</p></a>
+                        <a href="#"><p class="card-text border-top pt-2">Class DG</p></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col mb-4">
+                  <div class="card">
+                    <div class="card-header"><a href="#"><h5>MAX98397</h5></a></div>
+                    <div class="card-body">
+                        <a href="#"><p class="card-text pb-3">28V Digital Input, Class-DG Amplifier with IVSENSE, Ultra-Low IQ, and Brownout Prevention</p></a>
+                        <a href="#"><p class="card-text border-top pt-2">Class DG</p></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col mb-4">
+                  <div class="card">
+                    <div class="card-header"><a href="#"><h5>MAX98397</h5></a></div>
+                    <div class="card-body">
+                        <a href="#"><p class="card-text pb-3">28V Digital Input, Class-DG Amplifier with IVSENSE, Ultra-Low IQ, and Brownout Prevention</p></a>
+                        <a href="#"><p class="card-text border-top pt-2">Class DG</p></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col mb-4">
+                    <div class="card">
+                        <div class="card-header"><a href="#"><h5>MAX98397</h5></a></div>
+                        <div class="card-body">
+                            <a href="#"><p class="card-text pb-3">28V Digital Input, Class-DG Amplifier with IVSENSE, Ultra-Low IQ, and Brownout Prevention</p></a>
+                            <a href="#"><p class="card-text border-top pt-2">Class DG</p></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-4">
+                    <div class="card">
+                        <div class="card-header"><a href="#"><h5>MAX98397</h5></a></div>
+                        <div class="card-body">
+                            <a href="#"><p class="card-text pb-3">28V Digital Input, Class-DG Amplifier with IVSENSE, Ultra-Low IQ, and Brownout Prevention</p></a>
+                            <a href="#"><p class="card-text border-top pt-2">Class DG</p></a>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <!-- New reference design row -->
+              <div class="row pb-3">
+                    <h1 class="">NEW REFERENCE DESIGNS</h1>
+              </div>
+              <!-- New reference cards row -->
+              <div class="row row-cols-1 row-cols-md-4">
+                    <div class="col mb-4">
+                      <div class="card">
+                        <a href="#" class="underline">
+                            <img src="./img/CN0550_01.gif" class="card-img-top p-5" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title text-white">CN0550</h5>
+                              <p class="card-text text-white">Low/Full/High-Speed USB 2.0 Isolator with Isolated Power</p>
+                            </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="col mb-4">
+                      <div class="card">
+                        <a href="#" class="underline">
+                            <img src="./img/CN0550_01.gif" class="card-img-top p-5" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title text-white">CN0550</h5>
+                              <p class="card-text text-white">Low/Full/High-Speed USB 2.0 Isolator with Isolated Power</p>
+                            </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="col mb-4">
+                      <div class="card">
+                        <a href="#" class="underline">
+                            <img src="./img/CN0550_01.gif" class="card-img-top p-5" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title text-white">CN0550</h5>
+                              <p class="card-text text-white">Low/Full/High-Speed USB 2.0 Isolator with Isolated Power</p>
+                            </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="col mb-4">
+                      <div class="card">
+                            <a href="#" class="underline">
+                                <img src="./img/CN0550_01.gif" class="card-img-top p-5" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title text-white">CN0550</h5>
+                                  <p class="card-text text-white">Low/Full/High-Speed USB 2.0 Isolator with Isolated Power</p>
+                                </div>
+                            </a>
+                      </div>
+                    </div>
+              </div>
+              <!-- New Products Button row -->
+              <div class="row d-flex align-items-center justify-content-center pb-4">
+                <a href="#" class="btn-product" type="button">VIEW ALL NEW PRODUCTS</a>
+              </div>
+        </div>
+    </section>
+
+    <!-- ADI EngineerZone -->
+    <section class="adı-engineer-zone">
+        <div>
+            <img style="object-fit: cover; height:350px; width:100%;" src="./img/field-inst-1top-desktop.jpg" alt="">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <h1 class="text-white pb-3">Empower the Intelligent Edge with
+                        Next-Generation Field Instruments</h1>
+                    <p class="text-white pb-3">Field instruments capture, interpret, and communicate data to the cloud to generate actionable insights and drive efficiencies. Discover how ADI is solving the toughest challenges for power, sensing, precision measurement, safety, and connectivity in remote environments.</p>
+                    <a href="#" type="button" class="btn btn-adi-ezone">Solutions for the Edge of the Edge</a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <img style="object-fit: cover; height:350px; width:100%;" src="./img/field-inst-2bot-desktop.jpg" alt="">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <h1 class="text-white pb-3">More Power, More Speed, More Intelligence with 10BASE-T1L</h1>
+                    <p class="text-white pb-3">10BASE-T1L supplies more power and speed for intelligent field instruments and can be combined with industrial Ethernet MAC-PHY to overcome power restrictions. Learn how you can add further diagnostics, intelligence, and security features to a 4-20mA loop-powered field instrument that has already maximized its limited current.</p>
+                    <a href="#" type="button" class="btn btn-adi-ezone">Read more on EngineerZone™</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personalized Content -->
+    <section class="bg-personalized">
+        <div class="container pt-4">
+            <div class="row row-cols-1 row-cols-md-3">
+                <div class="col mb-4">
+                  <div class="card h-100 img-hover">
+                    <a href="#" class="personalized-content">
+                        <img src="./img/gas-sensor-tile.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Low Power Electrochemical Gas Sensing</h5>
+                          <p class="card-text">In this month’s Analog Dialogue, learn how MAX40108 can be used to optimize precision, performance, and power usage in electrochemical gas sensors such as ethanol and carbon monoxide detectors.</p>
+                        </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col mb-4">
+                  <div class="card h-100 img-hover">
+                    <a href="#" class="personalized-content">
+                        <img src="./img/catalyst-spot.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Co-create with Analog Devices</h5>
+                          <p class="card-text">No startup too small, no idea too big: Analog Devices hosts two platforms, ADI Catalyst and Analog Garage, where innovators can collaborate and leverage the resources and expertise of a global technology leader. Let’s solve our world’s toughest challenges and create a more sustainable future, together.</p>
+                        </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col mb-4">
+                  <div class="card h-100 img-hover">
+                    <a href="#" class="personalized-content">
+                        <img src="./img/myanalog-tile.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Plug in to MyAnalog</h5>
+                          <p class="card-text">Get the full Analog.com experience. Create a myAnalog account for easy order management, access to our dedicated support resources and forums, collaboration tools, personalized content curation, and more.</p>
+                        </div>
+                    </a>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row pb-4">
+                <h2 style="color: #101820; font-size: 30px;">Analog News</h2>
+            </div>
+            <div class="row row-cols-1 row-cols-md-4 pb-5">
+                <div class="col mb-4">
+                  <div class="card h-100 py-2">
+                    <div class="card-body">
+                      <h5 class="card-title"style="color: #636363;">Press Release</h5>
+                      <h6 class="card-date" style="color: #636363;">OCT 24 2023</h6>
+                      <a href="#" style="text-decoration: none;">
+                        <p class="card-text pt-3" style="font-size: 20px;">Analog Devices, Inc. to Report Fourth Quarter Fiscal Year 2023 Financial Results on Tuesday, November 21, 2023</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col mb-4">
+                  <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title"style="color: #636363;">Press Release</h5>
+                        <h6 class="card-date" style="color: #636363;">OCT 24 2023</h6>
+                        <a href="#" style="text-decoration: none;">
+                          <p class="card-text pt-3" style="font-size: 20px;">Analog Devices to Participate in J.P. Morgan 14th Annual U.S. All Stars Conference</p>
+                        </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col mb-4">
+                  <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title"style="color: #636363;">Press Release</h5>
+                        <h6 class="card-date" style="color: #636363;">OCT 24 2023</h6>
+                        <a href="#" style="text-decoration: none;">
+                          <p class="card-text pt-3" style="font-size: 20px;">Analog Devices to Participate in Citi’s 2023 Global Technology Conference</p>
+                        </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col mb-4">
+                  <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title"style="color: #636363;">Press Release</h5>
+                        <h6 class="card-date" style="color: #636363;">OCT 24 2023</h6>
+                        <a href="#" style="text-decoration: none;">
+                          <p class="card-text pt-3" style="font-size: 20px;">Analog Devices, Inc. to Report Fourth Quarter Fiscal Year 2023 Financial Results on Tuesday, November 21, 2023</p>
+                        </a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-footer">
+        <div class="container">
+            <div class="row pt-5">
+                <div class="col-2 mb-4">
+                    <a href="#" style="text-decoration: none;">
+                        <div class="footer-card">
+                            <h4>~25,000</h4>
+                            <p>Problem Solvers</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-2 mb-4">
+                    <a href="#" style="text-decoration: none;">
+                        <div class="footer-card">
+                            <h4>6,400+</h4>
+                            <p>Patents Worldwide</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-2 mb-4">
+                    <a href="#" style="text-decoration: none;">
+                        <div class="footer-card">
+                            <h4>125,000</h4>
+                            <p>Customers</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-2 mb-4">
+                    <a href="#" style="text-decoration: none;">
+                        <div class="footer-card">
+                            <h4>55+</h4>
+                            <p>Years</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-4">
+                    <h3 class="text-white d-flex">Ahead of What's Possible</h3>
+                    <img src="./img/bg-header.png" alt="" class="border-ahead">
+                    <p class="text-white" style="display: block;">Analog Devices empowers the Intelligent Edge with the world's most innovative analog, digital, & software solutions, to accelerate breakthroughs that benefit society and the planet.</p>
+                    <a href="#" style="color: #009fb4;">See the Innovations</a>
+                </div>
+            </div>
+            <div class="row pb-4">
+                <div class="col-8">
+                    <div class="footer-card-bottom-border"></div>
+                    <div>
+                        <p class="footer-card-bottom">Analog Devices. Dedicated to accelerating human breakthroughs that enrich lives and the world around us.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row border-top footer-links pt-5 pb-3">
+                <div class="col-2">
+                    <h2 class="pb-3">Social</h2>
+                    <ul class="pl-0 d-flex flex-wrap">
+                        <li>
+                            <a href="#"><i class="fa-solid fa-comment fa-2xl pr-4" style="color: #ffffff;"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-brands fa-instagram fa-2xl pr-4" style="color: #ffffff;"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-brands fa-facebook fa-2xl" style="color: #ffffff;"></i></a>
+                        </li>
+                    </ul>
+                    <ul class="pl-0 d-flex flex-wrap">
+                        <li>
+                            <a href="#"><i class="fa-brands fa-square-twitter fa-2xl pr-4" style="color: #ffffff;"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-brands fa-linkedin fa-2xl pr-4" style="color: #ffffff;"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-brands fa-youtube fa-2xl" style="color: #ffffff;"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-4 d-flex">
+                    <div class="col-6">
+                        <h2 class="pb-3">quick links</h2>
+                        <ul class="pl-0">
+                            <li><a href="#">About ADI</a></li>
+                            <li><a href="#">ADI Signals+</a></li>
+                            <li><a href="#">Analog Dialogue</a></li>
+                            <li><a href="#">CAreers</a></li>
+                            <li><a href="#">Contact us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 pt-3">
+                        <ul class="pl-0 pt-4">
+                            <li><a href="#">Investor Relations</a></li>
+                            <li><a href="#">News room</a></li>
+                            <li><a href="#">Quality & Reliability</a></li>
+                            <li><a href="#">Sales & Distribution</a></li>
+                            <li><a href="#">Incubators</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <h2 class="pb-3">languages</h2>
+                    <ul class="pl-0">
+                        <li><a href="#">English</a></li>
+                        <li><a href="#">Chinese</a></li>
+                        <li><a href="#">Japanese</a></li>
+                    </ul>
+                </div>
+                <div class="col-4">
+                    <h2 class="pb-3">myanalog</h2>
+                    <p>Interested in the latest news and articles about ADI products, design tools, training and events?</p>
+                    <a href="#" type="button" class="btn btn-my">Go to myAnalog</a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row d-flex align-items-center justify-content-between pb-3">
+                <div class="col-5 pl-0">
+                    <span class="copyright">©1995 - 2023 Analog Devices, Inc. All Rights Reserved</span>
+                </div>
+                <div class="col-5 copyright pr-0">
+                    <a href="#" class="border-right pr-1">Sitemap</a>
+                    <a href="#" class="border-right pr-1">Legal</a>
+                    <a href="#" class="border-right pr-1">Accessibility</a>
+                    <a href="#" class="border-right pr-1">Privacy Policy</a>
+                    <a href="#" class="border-right pr-1">Privacy Settings</a>
+                    <a href="#">Cookie Settings</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    
+    <script src="./js/design-tool.js"></script>
+    <script src="./js/script.js"></script>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

@@ -1,0 +1,718 @@
+body{
+    font-family: 'Barlow', Arial, Helvetica, sans-serif;
+    /* font-family: 'Inter', Arial, Helvetica, sans-serif; */
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Bu, yatay scroll'u engeller. */
+}
+
+body h1{
+    font-family: 'Barlow', Arial, Helvetica, sans-serif;
+    font-size: 36px;
+}
+
+body h2{
+    font-family: 'Barlow', Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
+
+body h3{
+    font-family: 'Barlow', Arial, Helvetica, sans-serif;
+    font-size: 24px;
+}
+
+.container{
+    max-width: 1140px;
+}
+
+
+
+
+/*__________________ Navbar ____________________*/
+.nav-adi-bg{
+    background-color: #f3f3f4;
+    max-height: 40px;
+}
+
+.nav-adi-bg .container{
+    font-family: 'Barlow', Arial, Helvetica, sans-serif;
+}
+
+.navbar .btn-group{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.navbar .btn-group .btn{
+    color: #636363;
+    border-left: 1px solid rgba(63, 63, 63, 0.04);
+    border-right: 1px solid rgba(63, 63, 63, 0.04);
+    border-radius: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.navbar .btn-group .btn:hover, .navbar .btn-group .btn:active, .navbar .btn-group .btn:focus{
+    background-color: #ffffff;
+    box-shadow: none;
+}
+
+.fa-cart-shopping{
+    color: #636363;
+}
+
+.nav-shopping span:nth-child(1){
+    padding-left: 55px;
+    padding-right: 55px;
+}
+
+.nav-shopping span:nth-child(1){
+    color: #0067b9;
+}
+
+.nav-shopping span:hover{
+    color: #636363;
+}
+
+.navbar .btn-group .dropdown .btn:focus{
+    background-color: #1e4056;
+    color: #ffffff;
+}
+
+.navbar .dropdown .dropdown-menu .row{
+    width: 400px;
+    text-align: center;
+}
+.navbar .dropdown .dropdown-menu .row .dropdown-item{
+    text-align: left;
+    height: min-content;
+}
+
+.navbar .dropdown .dropdown-menu .dropdown-header{
+    background-color: #1e4056;
+    color: #ffffff;
+    font-size: 24px;
+    margin-top: -8px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+
+/* Search input*/
+.input-width{
+    width: 90%;
+}
+
+form button i{
+    color: #636363;
+}
+
+form:hover input::placeholder,form:hover button i{
+    color: #0067b9;
+}
+
+form input:focus{
+    box-shadow: none;
+    outline: none;
+}
+
+
+
+
+/* Navbar Dropdown Links */
+.nav-link-bg{
+    background-color: #0067b9;
+    background-image: linear-gradient(to bottom, #0067b9, #003965);
+}
+
+.nav-link-bg ul{
+    list-style: none;
+}
+
+.nav-link-bg ul a{
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 15px 30px;
+}
+
+.nav-link-bg ul a:hover{
+    background-image: linear-gradient(to bottom, #003965, #0067b9);
+}
+
+
+/*__________________ Carousel ____________________*/
+
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-top: -18px;
+  }
+  
+  .carousel-slide {
+    display: none;
+    width: 100%;
+  }
+  
+  .carousel-slide.active {
+    display: block;
+  }
+  
+  .carousel-container img {
+    width: 100%;
+    height: 748px;
+    object-fit: cover;
+  }
+  
+  .carousel-buttons {
+    display: flex;
+    justify-content: center;
+    /* margin-top: 10px; */
+    /* background-color: #0067b9; */
+    background: #cbcdcf;
+    background-image: linear-gradient(#f8f8f9,#cbcdcf);
+    border-top: 4px solid #d9dadb;
+  }
+
+  .carousel-buttons a{
+    text-decoration: none;
+  }
+  
+  .carousel-btn {
+    width: 250px;
+    height: 75px;
+    border-left: 1px solid rgba(63, 63, 63, 0.08);
+    border-right: 1px solid rgba(63, 63, 63, 0.08);
+    border-radius: 0;
+    border-top: 2px solid transparent;
+    cursor: pointer;
+    color: #343b41;
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  .carousel-btn:hover{
+    background-color: #0067b9;
+    color: #ffffff;
+  }
+  
+  .carousel-btn.active{
+    border-top-width: 5px;
+    border-top-color: #ce214c; /* veya istediğiniz renk */
+    background-color: #0067b9;
+    color: #ffffff;
+  }
+
+  .carousel-btn span{
+    font-size: 12px;
+  }
+
+  .carousel-btn p{
+    font-size: 18px;
+  }
+
+  .carousel-slide .container:nth-child(1){
+    position: absolute;
+    top: 110px; /* Metnin resmin altında olmasını sağlar */
+    left: 55%;
+    transform: translateX(-50%);
+  }
+
+  .carousel-slide .container:nth-child(2){
+    position: absolute;
+    top: 50px; /* Metnin resmin altında olmasını sağlar */
+    left: 55%;
+    transform: translateX(-50%);
+  }
+
+  .carousel-slide .container h1{
+    color: #ffffff; /* İstenilen metin rengi */
+    font-size: 56px; /* İstenilen metin boyutu */
+    text-transform: uppercase;
+    line-height: 56px;
+    font-weight: bold;
+    opacity: 1;
+  }
+
+  .carousel-slide .container p{
+    color: white; /* İstenilen metin rengi */
+    font-size: 20px; /* İstenilen metin boyutu */
+  }
+
+  .btn-upgrade{
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 12px 30px;
+    background-color: #101820bf;
+    border: 2px solid #ffffff;
+    text-decoration: none;
+  }
+
+  .btn-upgrade:hover, .btn-upgrade:active, .btn-upgrade:focus{
+    color: #009fbd;
+    border: 2px solid #009fbd;
+    box-shadow: none;
+  }
+
+
+
+
+
+
+/*__________________ Design Tool ____________________*/
+
+.bg-top-design-tool{
+        background-image: linear-gradient(to right,#0e5c87,#37b0db,#5a9be3);
+        padding: 4px;
+}
+
+.bg-design-tool{
+    background-color: #142a38;
+    background-image: url(../img/bg-design-tool.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%; 
+    color: #fff;
+}
+
+.bg-design-tool p{
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+.bg-design-tool a{
+    background-color: #ffffff;
+    color: #0067b9;
+}
+
+.bg-design-tool a:hover, .bg-design-tool a:active, .bg-design-tool a:focus{
+    background-color: #009fbd;
+}
+
+
+
+
+/* design-tool-features */
+
+.design-tool-features {
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+.btn-design {
+    background-image: linear-gradient(#f8f8f9, #cbcdcf);
+    width: 160px;
+    height: 150px;
+    border: 1px solid #d9dadb;
+    border-bottom: 10px solid #d9dadb;
+    border-radius: 10px;
+    color: #343b41;
+    text-align: left;
+}
+
+.btn-design span:nth-child(1){
+    font-size: 12px;
+    color: #6b7074;
+    font-family: 'Barlow', Arial, Helvetica, sans-serif;
+}
+
+.btn-design span:nth-child(2){
+    font-size: 20px;
+    color: #343b41;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+.btn-design.active span:nth-child(1){
+    font-size: 12px;
+    color: #ffffff;
+    font-family: 'Barlow', Arial, Helvetica, sans-serif;
+}
+
+.btn-design.active span:nth-child(2){
+    font-size: 20px;
+    color: #ffffff;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+.btn-design:hover{
+    border-bottom: 10px solid #0067b9;
+}
+
+.btn-design:focus {
+    background-color: #0067b9;
+    border-bottom: 10px solid #0067b9;
+    box-shadow: none;
+}
+
+.btn-design.active {
+    background: #0067b9;
+    border-bottom: 10px solid #062b49;
+    color: #ffffff;
+    box-shadow: none;
+}
+
+.design-tool-features .col-6 .row .col-6 img {
+    border-left: 25px solid #f2f2f2;
+    border-radius: 10px;
+    margin-top: -70px;
+    height: 279px;
+}
+
+.design-tool-features .col-6 .row .col-6:nth-child(2) {
+    background-color: #272f3b;
+    margin-top: -70px;
+    margin-left: -20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-right: 35px;
+    height: 279px;
+}
+
+.design-tool-features .col-6 .row .col-6:nth-child(2) span {
+    color: #aaaaaa;
+    font-size: 16px;
+}
+
+.design-tool-features .col-6 .row .col-6:nth-child(2) p {
+    font-size: 24px;
+    color: #ffffff;
+    line-height: 100%;
+}
+
+.design-tool-features .col-6 .row .col-6:nth-child(2) a {
+    background-color: #54fafb;
+    color: #272f3b;
+    padding: 5px 25px;
+    font-size: 16px;
+}
+
+.design-tool-features .col-6 .row .col-6:nth-child(2) a:hover {
+    background-color: #f3f3f4;
+    color: #272f3b;
+}
+
+.design-tool-out-bg {
+    position: static;
+    float: right;
+    margin-right: -70px;
+    margin-top: -279px;
+    background-color: #272f3b;
+    width: 40%;
+    height: 279px;
+}
+
+.slide {
+    display: none;
+}
+
+.active-slide {
+    display: flex;
+}
+
+/* bg-bottom-design-tool */
+
+.bg-bottom-design-tool{
+    background-image: linear-gradient(to right,#5a9be3,#37b0db,#0e5c87);
+    padding: 4px;
+}
+
+
+
+
+
+/*__________________ New Products & Designs ____________________*/
+
+/* .new-products{
+
+} */
+
+.new-products .container .row:nth-child(1) h1{
+        font-size: 36px;
+        color: #333333;
+        border-left: 4px solid #0067b9;
+}
+
+.new-products .btn{
+    width: 130px;
+    background-color: #ffffff;
+    color: #0067b9;
+    border: 3px solid #cfd1d2;
+    font-size: 20px;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+.new-products .btn:hover{
+    border: 3px solid #0067b9;
+}
+
+.new-products .btn.active, .new-products .btn:focus{
+    border: 3px solid #003965;
+    background-color: #0067b9;
+    color: #ffffff;
+    box-shadow: none;
+}
+
+.new-products .card{
+    border-radius: 10px;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.new-products .card .card-body{
+    background-image: linear-gradient(#1b9cd0,#0067b9);
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+}
+
+.new-products .card .card-body a:nth-child(1){
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.new-products .card .card-body a:nth-child(2){
+    font-size: 14px;
+    color: #ffffff;
+    font-family: 'Barlow', Arial, Helvetica, sans-serif;
+}
+
+.new-products .card-header{
+    margin-bottom: -10px;
+}
+
+.new-products .card:hover{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.underline{
+    text-decoration-color: #ffffff !important;
+}
+
+.underline .card-body p{
+    text-decoration: none !important;
+}
+
+.btn-product{
+    background: #0067b9;
+    color: #ffffff;
+    padding: 10px 40px;
+    border-radius: 3px;
+    font-size: 16px;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+.btn-product:hover, .btn-product:active, .btn-product:focus{
+    background-color: #003965;
+    box-shadow: none;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+
+
+/*__________________ ADI EngineerZone ____________________*/
+
+.adı-engineer-zone .container{
+    position: relative;
+}
+
+.adı-engineer-zone .container .row{
+    position: absolute;
+    top: -320px;
+    left: 0;
+}
+
+.adı-engineer-zone p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn-adi-ezone{
+    background-color: #ffffff;
+    color: #0067b9;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-adi-ezone:hover, .btn-adi-ezone:focus, .btn-adi-ezone:active{
+    background-color: #009fbd;
+    color: #ffffff;
+    border-radius: 20px;
+    padding-left: 8px;
+    padding-right: 8px;
+    transition: 0.3s ease-in-out;
+    box-shadow: none;
+}
+
+
+
+
+/*__________________ Personalized Content ____________________*/
+.bg-personalized{
+    width: 100%;
+    background-color: #e0f0fb;
+}
+
+.personalized-content{
+    text-decoration: none !important;
+}
+
+.personalized-content:hover{
+    text-decoration: none !important;
+}
+
+.personalized-content .card-title{
+    font-size: 24px;
+    color: #323232;
+}
+
+.personalized-content .card-text{
+    font-size: 16px;
+    color: #333333;
+}
+
+.img-hover{
+    position: relative;
+    overflow: hidden;
+}
+
+.img-hover img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.8s;
+    transform: scale(1.0);
+}
+
+.img-hover:hover img,
+.img-hover:active img,
+.img-hover:focus img {
+    transform: scale(1.2);
+}
+
+
+            /* _________Bütün Card lar için sağ ve sol margin_________ */
+            .col .card:nth-child(1){
+                margin-left: -20px;
+            }
+
+            .col .card:nth-child(4){
+                margin-right: -20px;
+            }
+            /* _________Bütün Card lar için sağ ve sol margin_________ */
+
+
+
+
+/*__________________ Footer ____________________*/
+
+.bg-footer{
+    background-color: #27303c;
+}
+
+.border-ahead{
+    margin-top: -30px;
+}
+
+.footer-card{
+    background-color: #0067b9; 
+    height: 129px; 
+    padding-top: 40px;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.footer-card h4{
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer-card p{
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bg-footer .container .row{
+    margin-left: -30px;
+    margin-right: -10px;
+}
+
+.footer-card-bottom-border{
+    position: relative;
+    border: 1px solid #d9dadb;
+    border-top: none;
+    height: 16px;
+    top: 0;
+}
+
+.footer-card-bottom-border::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 16px;
+    width: 1px;
+    height: 100%;
+    background-color: #d9dadb;
+    transform: translateX(-50%);
+}
+
+.footer-card-bottom{
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+}
+
+.footer-links h2{
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: bolder;
+}
+
+.bg-footer ul{
+    list-style: none;
+}
+
+.bg-footer ul li a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.bg-footer .col-4 p{
+    color: #ffffff;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn-my{
+    color: #ffffff;
+    border-radius: 20px;
+    background-color: #0067b9;
+    padding: 2px 20px;
+}
+
+.copyright{
+    color: #ffffff;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.copyright a{
+    color: #ffffff;
+}
+
+
+
+
